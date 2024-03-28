@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background: coral;
+        /* transition: transform 1s 2s; */
+        /* transition: 1s;  // 단축형 */
+        /* transition-duration: 1s;
+        transition-timing-function: ease;
+        transition-delay: 0s;
+        transition-property: all; */
+        transition: transform 1s cubic-bezier(0.38, -0.57, 0.63, 1.54),
+          background 2s 1s linear;
+      }
+      .box-action {
+        transform: translateX(300px);
+        background: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <script>
+      const box = document.querySelector(".box");
+      box.addEventListener("click", () => {
+        box.classList.toggle("box-action");
+      });
+    </script>
+  </body>
+</html>

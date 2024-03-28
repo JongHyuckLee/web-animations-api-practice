@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chapter1</title>
+    <style>
+      body {
+        background: black;
+      }
+      @keyframes space-ani {
+        to {
+          background-position: -510px 0;
+        }
+      }
+      .spaceship {
+        width: 30px;
+        height: 30px;
+        background: url("./sprite_spaceship.png") no-repeat 0 0 / auto 30px;
+        animation: space-ani 1s infinite steps(17) forwards;
+        margin: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Animation</h1>
+
+    <div class="box-container">
+      <div class="spaceship"></div>
+    </div>
+  </body>
+</html>
