@@ -23,7 +23,16 @@
   <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.2/web-animations-next.min.js"></script>
     <script type="module">
-      import Star from "./Star.js";
+      import Star from "./Star2.js";
+
+      function set3DPoint(x, y, z) {
+        const scale = zModifier / (zModifier + z);
+        const x2D = x * scale;
+        const y2D = y * scale;
+
+        return [x2D, y2D, scale];
+      }
+
       const numberOfStars = 200;
       const zModifier = window.innerHeight;
 
@@ -33,8 +42,11 @@
         x = Math.random() * window.innerWidth;
         y = Math.random() * window.innerHeight;
         z = Math.random() * zModifier; // 임의의 z 범위이다. 꼭 innerHeight이 아니어도 된다.
-        scale = zModifier / (zModifier + z);
-        new Star(i, x, y, scale);
+
+        const pointFrom = set3DPoint(x, y, z);
+        const pointTo = set3DPoint(x, y, z - zModifier);
+
+        new Star(i);
       }
     </script>
   </body>
