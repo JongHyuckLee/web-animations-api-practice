@@ -168,7 +168,7 @@ body {
 
 .wrap {
   /* overflow-x: hidden; */
-  contain: content;
+  contain: paint;
 }
 .airplane {
   position: absolute;
