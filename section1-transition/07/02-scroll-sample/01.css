@@ -166,6 +166,10 @@ body {
   background: dodgerblue;
 }
 
+.wrap {
+  /* overflow-x: hidden; */
+  contain: content;
+}
 .airplane {
   position: absolute;
   left: 0;
